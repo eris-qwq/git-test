@@ -257,6 +257,10 @@ static void MX_GPIO_Init(void)
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(LED_red_GPIO_Port, LED_red_Pin, GPIO_PIN_RESET);
+  HAL_Delay(500); // Delay for 500 ms to ensure the LED is off at startup
+  HAL_GPIO_WritePin(LED_red_GPIO_Port, LED_red_Pin, GPIO_PIN_SET);
+  HAL_Delay(500); // Delay for 500 ms to ensure the LED is off at startup
+
 
   /*Configure GPIO pin : LED_red_Pin */
   GPIO_InitStruct.Pin = LED_red_Pin;
